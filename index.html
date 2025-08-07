@@ -238,7 +238,8 @@
         .research-card-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
         }
         
         .research-card-content {
@@ -455,36 +456,7 @@
                 padding: 15px 20px;
             }
         
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .header {
-                padding: 40px 20px;
-            }
-            
-            .content {
-                padding: 40px 20px;
-            }
-            
-            .name {
-                font-size: 2rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-list {
-                flex-direction: column;
-            }
-            
-            .nav-link {
-                padding: 15px 20px;
-            }
-        }
+       }
     </style>
 </head>
 <body>
@@ -813,6 +785,7 @@
     </script>
 </body>
 </html>
+
 
 
 
