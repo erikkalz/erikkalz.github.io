@@ -663,6 +663,32 @@
                 document.getElementById(targetId).classList.add('active');
             });
         });
+
+        // Add highlighting function for publications
+        function highlightPublication(pubId) {
+            // Remove any existing highlights
+            document.querySelectorAll('.publication-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.transform = 'translateX(0)';
+            });
+            
+            // Navigate to publications section
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            
+            document.querySelector('a[href="#publications"]').classList.add('active');
+            document.getElementById('publications').classList.add('active');
+            
+            // Highlight the specific publication after a short delay
+            setTimeout(() => {
+                const targetPub = document.getElementById(pubId);
+                if (targetPub) {
+                    targetPub.style.background = 'linear-gradient(135deg, #e8f5e8, #f0f8f0)';
+                    targetPub.style.transform = 'translateX(10px)';
+                    targetPub.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+        }
         
         // Smooth scrolling for better UX
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -692,6 +718,7 @@
     </script>
 </body>
 </html>
+
 
 
 
