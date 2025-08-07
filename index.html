@@ -223,8 +223,10 @@
         }
 
         .research-card-image {
-            width: 100%;
-            height: 200px;
+            max-width: 120px;
+            height: auto;
+            margin-right: 20px;
+            object-fit: contain; /* ensures image scales nicely */
             background: linear-gradient(135deg, #4a7c59, #7ba05a);
             display: flex;
             align-items: center;
@@ -786,6 +788,7 @@
     </script>
 </body>
 </html>
+
 
 
 
