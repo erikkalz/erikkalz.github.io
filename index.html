@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Your Name - Researcher</title>
+    <title> Erik Kalz</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2d5016 0%, #3e6b1f 25%, #4a7c59 50%, #5d8a66 75%, #7ba05a 100%);
             min-height: 100vh;
         }
         
@@ -35,7 +35,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+            background: linear-gradient(135deg, #1a3d0a, #2d5016, #4a7c59);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -70,7 +70,7 @@
             height: 150px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(45deg, #4a7c59, #7ba05a);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -156,7 +156,7 @@
             left: 50%;
             width: 0;
             height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4a7c59, #7ba05a);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -167,7 +167,7 @@
         }
         
         .nav-link:hover {
-            color: #667eea;
+            color: #4a7c59;
         }
         
         .content {
@@ -191,8 +191,8 @@
         .section h2 {
             font-size: 2.2rem;
             margin-bottom: 30px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: #1a3d0a;
+            border-bottom: 3px solid #4a7c59;
             padding-bottom: 10px;
             display: inline-block;
         }
@@ -210,7 +210,54 @@
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #4a7c59;
+            overflow: hidden;
+        }
+
+        .research-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #4a7c59, #7ba05a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .research-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .research-card-content {
+            padding: 30px;
+        }
+        
+        .research-card-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .research-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #4a7c59, #2d5016);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .research-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
         }
         
         .research-card:hover {
@@ -219,7 +266,7 @@
         }
         
         .research-card h3 {
-            color: #2c3e50;
+            color: #1a3d0a;
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
@@ -245,7 +292,7 @@
         }
         
         .project-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4a7c59, #7ba05a);
             color: white;
             padding: 25px;
         }
@@ -279,7 +326,7 @@
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #4a7c59, #2d5016);
             color: white;
         }
         
@@ -305,16 +352,18 @@
             border-left: 4px solid #e74c3c;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .publication-item:hover {
             transform: translateX(5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            background: #f8f9fa;
         }
         
         .pub-title {
             font-weight: 600;
-            color: #2c3e50;
+            color: #1a3d0a;
             margin-bottom: 8px;
             font-size: 1.1rem;
         }
@@ -326,7 +375,7 @@
         
         .pub-venue {
             font-style: italic;
-            color: #3498db;
+            color: #4a7c59;
         }
         
         .news-item {
@@ -334,7 +383,7 @@
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 10px;
-            border-left: 4px solid #2ecc71;
+            border-left: 4px solid #7ba05a;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
@@ -345,7 +394,7 @@
         }
         
         .footer {
-            background: #2c3e50;
+            background: #1a3d0a;
             color: white;
             text-align: center;
             padding: 30px;
@@ -390,13 +439,12 @@
             <header class="header">
                 <div class="header-content">
                     <div class="profile-img">YN</div>
-                    <h1 class="name">Dr. Your Name</h1>
-                    <p class="title">Research Scientist | PhD in [Your Field]</p>
+                    <h1 class="name">Erik Kalz</h1>
+                    <p class="title">About to graduate in theoretical physics</p>
                     <div class="contact-info">
-                        <a href="mailto:your.email@university.edu" class="contact-item">📧 Email</a>
-                        <a href="https://scholar.google.com/citations?user=yourprofile" class="contact-item">📚 Google Scholar</a>
-                        <a href="https://github.com/yourusername" class="contact-item">💻 GitHub</a>
-                        <a href="https://linkedin.com/in/yourprofile" class="contact-item">💼 LinkedIn</a>
+                        <a href="mailto:erik.kalz@uni-potsdam.de" class="contact-item">📧 Email</a>
+                        <a href="https://scholar.google.com/citations?user=yH1FDxIAAAAJ&hl=de" class="contact-item">📚 Google Scholar</a>
+                        <a href="https://orcid.org/0000-0003-3294-7365" class="contact-item"> ORCiD</a>
                     </div>
                 </div>
             </header>
@@ -418,27 +466,48 @@
                         Welcome to my research website! I am a passionate researcher in [Your Field], currently working on [brief description of your main research focus]. I recently completed my PhD at [University Name] and am excited to begin my independent research career.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                        My research interests lie at the intersection of [Research Area 1] and [Research Area 2], with a particular focus on [Specific Focus]. I am passionate about [what drives your research] and believe that [your research vision/impact].
+                        My research lies at the intersection of <b>statistical physics<\b>, <b>soft matter theory<\b>, and <b>nonequilibrium dynamics<\b>, with a focus on understanding how <b>broken symmetries<\b>
+                        and <b>interactions<\b> shape transport processes in complex systems.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                        A central theme in my work is the role of <b>antisymmetric (odd) transport tensors<\b>, which arise in systems with broken time-reversal or parity symmetry, such as <b>active chiral matter<\b> 
+                        or particles under <b>Lorentz-like forces<\b>. I investigate how these symmetry-breaking effects manifest in both equilibrium and nonequilibrium settings, from microscopic stochastic 
+                        models to coarse-grained field theories.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                        My broader goal is to develop a <b>unified theoretical framework<\b> for describing transport and response in systems where irreversibility is built into the dynamics, 
+                        and to uncover the mechanisms through which local asymmetries give rise to macroscopic behavior.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.8;">
                         I am always interested in collaborating with fellow researchers and discussing new ideas. Feel free to reach out if you'd like to connect!
                     </p>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="cv.pdf" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;" download>
+                            📄 Download CV
+                        </a>
+                        <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9rem;">Last updated: August 2025</p>
+                    </div>
                 </section>
                 
                 <section id="research" class="section">
                     <h2>Research Areas</h2>
                     <div class="research-areas">
                         <div class="research-card">
-                            <h3>Research Area 1</h3>
-                            <p>Detailed description of your first major research area. Explain the problems you're tackling, methodologies you use, and why this area is important.</p>
+                            <h3>Tracer transport in odd systems</h3>
+                            <p>Transport in soft matter is fundamentally altered when time-reversal and parity symmetries are broken. We investigate how such symmetry breaking, encoded in odd transport coefficients, 
+                            modifies tracer dynamics in interacting particle systems. We focus on how interactions in odd-diffusive media, both passive and active, lead to enhanced or even reversed tracer motion. 
+                            Recent results demonstrate that repulsive collisions can ennhnace tracer diffusion and, remarkably, cause a reversal of Hall-like drift under force, effects that are absent in symmetric 
+                            environments, or believed to characterise actiuve systems. This research contributes to a growing understanding of how chiral fluids, skyrmionic media, and other non-reciprocal 
+                            systems process fluctuations and respond to external driving, revealing new directions for controlling microscopic transport.</p>
                         </div>
                         <div class="research-card">
-                            <h3>Research Area 2</h3>
-                            <p>Description of your second research focus. Highlight key challenges, your approach, and potential applications of your work.</p>
-                        </div>
-                        <div class="research-card">
-                            <h3>Research Area 3</h3>
-                            <p>Information about any additional research interests or emerging areas you're exploring.</p>
+                            <h3>Chiral field theories</h3>
+                            <p>How does chiral symmetry breaking affect collective behavior in many-body systems? This line of research develops field-theoretic frameworks to describe nonequilibrium dynamics in 
+                            chiral and active matter. Building on Dean-Kawasaki-type equations or the Active Model B+, we incorporate antisymmetric couplings, originating from odd diffusion and chiral activity, 
+                            into fluctuating hydrodynamic theories. These approaches reveal how chiral interactions affect density fluctuations, pattern formation, and macroscopic transport coefficients. This 
+                            work aims to connect microscopic stochastic dynamics to emergent continuum descriptions in systems ranging from colloidal suspensions to biological swarms with internal rotation or 
+                            handedness.</p>
                         </div>
                     </div>
                 </section>
@@ -448,8 +517,8 @@
                     <div class="project-grid">
                         <div class="project-card">
                             <div class="project-header">
-                                <h3 class="project-title">Project Title 1</h3>
-                                <div class="project-meta">Status: Ongoing | Duration: 2024-2025</div>
+                                <h3 class="project-title">History of diffusion and Chirality</h3>
+                                <div class="project-meta">Status: Ongoing | Duration: 2025-2026</div>
                             </div>
                             <div class="project-body">
                                 <p>Brief description of your project, its objectives, methodology, and expected outcomes. Highlight any unique aspects or innovations.</p>
@@ -479,22 +548,52 @@
                 <section id="publications" class="section">
                     <h2>Publications</h2>
                     <div class="publications-list">
-                        <div class="publication-item">
-                            <div class="pub-title">Your Paper Title Here: A Comprehensive Study</div>
-                            <div class="pub-authors"><strong>Your Name</strong>, Co-Author Name, Another Author</div>
-                            <div class="pub-venue">Conference/Journal Name, Year</div>
+                        <div class="publication-item" id="pub8" onclick="window.open('https://doi.org/10.48550/arXiv.2503.04544'>
+                            <div class="pub-title">Reversal of tracer advection and Hall drift in an interacting chiral fluid</div>
+                            <div class="pub-authors"><strong>E. Kalz</strong>, S. Ravichandir, J. Birkenmeier, R. Metzler, and A. Sharma </div>
+                            <div class="pub-venue">arXiv:2503.04544, 2025</div>
                         </div>
                         
-                        <div class="publication-item">
-                            <div class="pub-title">Another Research Paper: Novel Approaches and Results</div>
-                            <div class="pub-authors">First Author, <strong>Your Name</strong>, Last Author</div>
-                            <div class="pub-venue">Journal Name, Year</div>
+                        <div class="publication-item" id="pub7" onclick="window.open('https://doi.org/10.1088/1367-2630/adbdea'>
+                            <div class="pub-title">Self-diffusion anomalies of an odd tracer in soft-core media</div>
+                            <div class="pub-authors">P. L. Muzzeddu, <strong>E. Kalz</strong>, A. Gambassi, A. Sharma, and R. Metzler </div>
+                            <div class="pub-venue">New Journal of Physics, 27(3):033025, 2025</div>
                         </div>
                         
-                        <div class="publication-item">
-                            <div class="pub-title">Workshop Paper or Conference Abstract</div>
-                            <div class="pub-authors"><strong>Your Name</strong>, Collaborator</div>
-                            <div class="pub-venue">Workshop at Major Conference, Year</div>
+                        <div class="publication-item" id="pub6" onclick="window.open('https://doi.org/10.1103/PhysRevResearch.6.043036'>
+                            <div class="pub-title">Dance of odd-diffusive particles: A Fourier approach</div>
+                            <div class="pub-authors">A. Langer, A. Sharma, R. Metzler, and <strong>E. Kalz</strong></div>
+                            <div class="pub-venue">Physical Review Research, 6(4):043036, 2024</div>
+                        </div>
+                    
+                        <div class="publication-item" id="pub5" onclick="window.open('https://doi.org/10.1088/1751-8121/ad5089'>
+                            <div class="pub-title">Field theory of active chiral hard disks: A first-principles approach to steric interactions</div>
+                            <div class="pub-authors"><strong>E. Kalz</strong>, A. Sharma, and R. Metzler</div>
+                            <div class="pub-venue">Journal of Physics A: Mathematical and Theoretical, 57(26):265002, 2024</div>
+                        </div>
+                    
+                        <div class="publication-item" id="pub4" onclick="window.open('https://doi.org/10.1103/PhysRevLett.129.090601'>
+                            <div class="pub-title">Oscillatory force autocorrelations in equilibrium odd-diffusive systems</div>
+                            <div class="pub-authors"><strong>E. Kalz</strong>, H. D. Vuijk, J.-U. Sommer, R. Metzler, and A. Sharma</div>
+                            <div class="pub-venue">Physical Review Letters, 132(5):057102, 2024</div>
+                        </div>
+                        
+                        <div class="publication-item" id="pub3" onclick="window.open('https://doi.org/10.1103/PhysRevLett.132.057102', '_blank')">
+                            <div class="pub-title">Collisions enhance selfdiffusion in odd-diffusive systems.</div>
+                            <div class="pub-authors"><strong>E. Kalz</strong>, H. D. Vuijk, I. Abdoli, J.-U. Sommer, H. Löwen, and A. Sharma</div>
+                            <div class="pub-venue">Physical Review Letters, 129(9):090601, 2022</div>
+                        </div>
+
+                        <div class="publication-item" id="pub2" onclick="window.open('https://doi.org/10.1007/978-3-658-39518-6'>
+                            <div class="pub-title">Diffusion under the Effect of Lorentz Force</div>
+                            <div class="pub-authors"><strong>E. Kalz</strong></div>
+                            <div class="pub-venue">Springer Sprktrum Wiesbaden, 2022</div>
+                        </div>
+                        
+                        <div class="publication-item" id="pub1" onclick="window.open('https://doi.org/10.1088/1367-2630/abb43d', '_blank')">
+                            <div class="pub-title">Correlations in multithermostat Brownian systems with Lorentz force</div>
+                            <div class="pub-authors">I. Abdoli, <strong>E. Kalz</strong>, H. D. Vuijk, R. Wittmann, J.-U. Sommer, J. M. Brader, and A. Sharma</div>
+                            <div class="pub-venue">New Journal of Physics, 22(9):093057, 2020</div>
                         </div>
                     </div>
                 </section>
@@ -505,28 +604,13 @@
                         <div class="news-date">August 2025</div>
                         <p><strong>Website Launch:</strong> Excited to launch my new research website as I begin my independent career!</p>
                     </div>
-                    
-                    <div class="news-item">
-                        <div class="news-date">July 2025</div>
-                        <p><strong>PhD Defense:</strong> Successfully defended my dissertation on [Topic] at [University].</p>
-                    </div>
-                    
-                    <div class="news-item">
-                        <div class="news-date">June 2025</div>
-                        <p><strong>Paper Accepted:</strong> Our paper on [Research Topic] has been accepted to [Conference/Journal]!</p>
-                    </div>
-                    
-                    <div class="news-item">
-                        <div class="news-date">May 2025</div>
-                        <p><strong>Conference Presentation:</strong> Presented our latest work at [Conference Name] in [Location].</p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     
     <footer class="footer">
-        <p>&copy; 2025 Dr. Your Name. Built with passion for research and discovery.</p>
+        <p>&copy; 2025 Erik Kalz. Built with passion for research and discovery.</p>
     </footer>
     
     <script>
