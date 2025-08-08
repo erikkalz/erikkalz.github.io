@@ -8,28 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 
     <script>
-    // Initialize Google Analytics only after consent
-    function initializeGoogleAnalytics() {
-        const script1 = document.createElement('script');
-        script1.async = true;
-        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-M6CQFW6NX9';
-        document.head.appendChild(script1);
+        // Initialize Google Analytics only after consent
+        function initializeGoogleAnalytics() {
+            const script1 = document.createElement('script');
+            script1.async = true;
+            script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-M6CQFW6NX9';
+            document.head.appendChild(script1);
             
-        const script2 = document.createElement('script');
-        script2.innerHTML = `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-M6CQFW6NX9', {
-                anonymize_ip: true
-            });
-         `;
-        document.head.appendChild(script2);
-    }
-        
-    if (localStorage.getItem('cookie-consent') === 'accepted') {
-        initializeGoogleAnalytics();
-    }
+            const script2 = document.createElement('script');
+            script2.innerHTML = `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-M6CQFW6NX9', {
+                    anonymize_ip: true
+                });
+             `;
+            document.head.appendChild(script2);
+        }
+        // Check if consent has been given
+        if (localStorage.getItem('cookie-consent') === 'accepted') {
+            initializeGoogleAnalytics();
+        }
+    </script>
     
     <style>
         * {
@@ -1188,6 +1189,7 @@
     </script>
 </body>
 </html>
+
 
 
 
