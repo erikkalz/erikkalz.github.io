@@ -7,14 +7,28 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CQFW6NX9"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-M6CQFW6NX9');
-        gtag('config', 'G-M6CQFW6NX9', {anonymize_ip: true});
-    </script>
+    function initializeGoogleAnalytics() {
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-M6CQFW6NX9';
+        document.head.appendChild(script1);
+            
+        const script2 = document.createElement('script');
+        script2.innerHTML = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-M6CQFW6NX9', {
+                anonymize_ip: true
+            });
+         `;
+        document.head.appendChild(script2);
+    }
+        
+    if (localStorage.getItem('cookie-consent') === 'accepted') {
+        initializeGoogleAnalytics();
+    }
     
     <style>
         * {
@@ -372,12 +386,9 @@
             background: white;
             padding: 25px;
             margin-bottom: 20px;
-            <!--
-            padding: 25px;
-            margin: 0 20px 20px 20px;
-            -->
             border-radius: 10px;
-            border-left: 4px solid #e74c3c;
+            border-left: 4px solid #4a7c59;
+            <!--  #e74c3c -->
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
@@ -585,6 +596,20 @@
 </head>
 <body>
     <div class="container">
+        <div id="cookie-banner" class="cookie-banner">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <p>This website uses cookies and Google Analytics to analyze website usage and improve user experience. By clicking "Accept", 
+                    you consent to the use of cookies and data processing. You can find more information in our <a href="#impressum" onclick="showImpressum()">Impressum</a>.</p>
+                </div>
+                <div class="cookie-buttons">
+                    <button class="cookie-btn decline" onclick="declineCookies()">Decline</button>
+                    <button class="cookie-btn accept" onclick="acceptCookies()">Accept</button>
+                </div>
+            </div>
+        </div>
+
+        
         <div class="main-content">
             <header class="header">
                 <div class="header-content">
@@ -972,6 +997,47 @@
             });
         });
 
+        // Cookie consent functionality
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.add('show');
+        }
+        
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.remove('show');
+        }
+        
+        function acceptCookies() {
+            localStorage.setItem('cookie-consent', 'accepted');
+            hideCookieBanner();
+            initializeGoogleAnalytics();
+        }
+        
+        function declineCookies() {
+            localStorage.setItem('cookie-consent', 'declined');
+            hideCookieBanner();
+        }
+        
+        function showImpressum() {
+            // Navigate to impressum section
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            
+            document.querySelector('a[href="#impressum"]').classList.add('active');
+            document.getElementById('impressum').classList.add('active');
+            
+            hideCookieBanner();
+        }
+        
+        // Show cookie banner on page load if no consent given
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookie-consent');
+            if (!consent) {
+                setTimeout(showCookieBanner, 1000); // Show after 1 second
+            }
+        });
+
         // Add highlighting function for publications
         function highlightPublication(pubId) {
             // Remove any existing highlights
@@ -1026,6 +1092,7 @@
     </script>
 </body>
 </html>
+
 
 
 
