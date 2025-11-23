@@ -1139,6 +1139,11 @@
             
             // Set initial state
             history.replaceState({ section: initialSection }, '', `#${initialSection}`);
+
+            // Scroll to top when entering the website
+            if (!currentHash) {
+                window.scrollTo(0, 0);
+            }
         });
 
         // Cookie consent functionality
@@ -1236,6 +1241,7 @@
     </script>
 </body>
 </html>
+
 
 
 
