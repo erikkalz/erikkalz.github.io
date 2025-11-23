@@ -1108,6 +1108,9 @@
                 
                 // Add to browser history
                 if (addToHistory) {
+                    if (sectionId === 'about') {
+                        history.pushState({ section: sectionId }, '', window.location.pathname);
+                    } else {
                     history.pushState({ section: sectionId }, '', `#${sectionId}`);
                 }
             }
@@ -1137,11 +1140,12 @@
             const initialSection = currentHash || 'about';
             showSection(initialSection, false);
             
-            // Set initial state
-            history.replaceState({ section: initialSection }, '', `#${initialSection}`);
 
             // Scroll to top when entering the website
-            if (!currentHash) {
+            if (currentHash) {
+                history.replaceState({ section: initialSection }, '', `#${initialSection}`);
+            } else {
+                history.replaceState({ section: 'about' }, '', window.location.pathname);
                 window.scrollTo(0, 0);
             }
         });
@@ -1241,6 +1245,7 @@
     </script>
 </body>
 </html>
+
 
 
 
