@@ -1093,29 +1093,29 @@
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section');
         
-        function showSection(sectionId, addToHistory = true) {
-    // Remove active class from all links and sections
-    navLinks.forEach(l => l.classList.remove('active'));
-    sections.forEach(s => s.classList.remove('active'));
+    function showSection(sectionId, addToHistory = true) {
+        // Remove active class from all links and sections
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
     
-    // Add active class to corresponding link and section
-    const targetLink = document.querySelector(`a[href="#${sectionId}"]`);
-    const targetSection = document.getElementById(sectionId);
+        // Add active class to corresponding link and section
+        const targetLink = document.querySelector(`a[href="#${sectionId}"]`);
+        const targetSection = document.getElementById(sectionId);
     
-    if (targetLink && targetSection) {
-        targetLink.classList.add('active');
-        targetSection.classList.add('active');
+        if (targetLink && targetSection) {
+            targetLink.classList.add('active');
+            targetSection.classList.add('active');
         
-        // Add to browser history
-        if (addToHistory) {
-            if (sectionId === 'about') {
-                history.pushState({ section: sectionId }, '', window.location.pathname);
-            } else {
-                history.pushState({ section: sectionId }, '', `#${sectionId}`);
+            // Add to browser history
+            if (addToHistory) {
+                if (sectionId === 'about') {
+                    history.pushState({ section: sectionId }, '', window.location.pathname);
+                } else {
+                    history.pushState({ section: sectionId }, '', `#${sectionId}`);
+                }
             }
         }
     }
-}
         
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -1244,76 +1244,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
