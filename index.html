@@ -1134,21 +1134,6 @@
             }
         });
         
-        // Initialize with current hash or default section
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentHash = window.location.hash.substring(1);
-            const initialSection = currentHash || 'about';
-            showSection(initialSection, false);
-            
-
-            // Scroll to top when entering the website
-            if (currentHash) {
-                history.replaceState({ section: initialSection }, '', `#${initialSection}`);
-            } else {
-                history.replaceState({ section: 'about' }, '', window.location.pathname);
-                window.scrollTo(0, 0);
-            }
-        });
 
         // Cookie consent functionality
         function showCookieBanner() {
@@ -1188,6 +1173,19 @@
             const consent = localStorage.getItem('cookie-consent');
             if (!consent) {
                 setTimeout(showCookieBanner, 1000); // Show after 1 second
+            }
+
+            // Initialize navigation
+            const currentHash = window.location.hash.substring(1);
+            const initialSection = currentHash || 'about';
+            showSection(initialSection, false);
+    
+            // Set initial state - don't add #about to URL
+            if (currentHash) {
+                history.replaceState({ section: initialSection }, '', `#${initialSection}`);
+            } else {
+                history.replaceState({ section: 'about' }, '', window.location.pathname);
+                window.scrollTo(0, 0);
             }
         });
 
@@ -1245,6 +1243,7 @@
     </script>
 </body>
 </html>
+
 
 
 
