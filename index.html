@@ -235,9 +235,16 @@
         
         .research-areas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-top: 30px;
+            max-width: 100%;
+        }
+
+        .research-card:nth-child(3) {
+            grid-column: 1 / -1;
+            max-width: 50%;
+            margin: 0 auto;
         }
         
         .research-card {
@@ -759,7 +766,7 @@
                         <a href="CV_Erik_Kalz.pdf" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;" download>
                             📄 Download CV
                         </a>
-                        <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9rem;">Last updated: December 2025</p>
+                        <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9rem;">Last updated: February 2026</p>
                     </div>
                 </section>
                 
@@ -1307,6 +1314,7 @@
     </script>
 </body>
 </html>
+
 
 
 
