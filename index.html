@@ -71,18 +71,6 @@
             overflow: hidden;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: float 20s infinite linear;
-        }
-        
         @keyframes float {
             0% { transform: translate(-50%, -50%) rotate(0deg); }
             100% { transform: translate(-50%, -50%) rotate(360deg); }
@@ -1106,6 +1094,17 @@
                 
                 <section id="news" class="section">
                     <h2>News & Updates</h2>
+
+                    <div class="news-item">
+                        <div class="news-date">November 2026</div>
+                         <p><strong>PGzB Dissertation Prize:</strong> I am delighted to receive this year's
+                         <a href="https://pgzb.de/kalender/details/dissertationspreis-der-pgzb-2026" target="_blank" rel="noopener" style="color: #4a7c59;">Dissertation Prize</a>
+                         of the Physikalische Gesellschaft zu Berlin (PGzB; "Physics Society of Berlin") for my PhD thesis. The prize
+                         will be awarded at a ceremony at Humboldt-Universität zu Berlin on 9 December 2026.</p>
+                        <div class="research-card-links">
+                            <a class="research-link" onclick="highlightPublication('pub9')">Tracer transport in interacting odd-diffusive systems</a>
+                        </div>
+                    </div>
 
                     <div class="news-item">
                         <div class="news-date">November 2026</div>
